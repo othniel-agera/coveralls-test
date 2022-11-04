@@ -8,7 +8,7 @@ const app = express();
 // Mount routers
 app.use("/api/v1", route);
 
-const PORT = 5030;
+const PORT = process.env.NODE_ENV === "test" ? 2345 : process.env.PORT || 4040;
 
 const server = app.listen(
 	PORT,
@@ -21,3 +21,4 @@ process.on("unhandledRejection", (err, promise) => {
 	// Close server & exit process
 	server.close(() => process.exit(1));
 });
+module.exports = { app };

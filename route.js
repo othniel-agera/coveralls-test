@@ -1,11 +1,8 @@
 const express = require("express");
+const ctrl = require("./ctrl");
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-	res.status(200).send({
-		message: "Welcome to the coveralls test API",
-	});
-});
+router.get("/*", ctrl);
 
 module.exports = router;
