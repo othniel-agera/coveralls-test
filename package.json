@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js",
-    "test": "NODE_ENV=test nyc mocha --exit",
-    "test:coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
+    "test:normal": "NODE_ENV=test nyc mocha --exit",
+    "test": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "keywords": [],
   "author": "",
