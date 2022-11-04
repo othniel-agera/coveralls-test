@@ -1,23 +1,18 @@
 const express = require("express");
 
 //Route files
-const bootcamps = require("./routes/bootcamp.route");
+const route = require("./route");
 
 const app = express();
 
-// Set static folder
-app.use(express.static(path.join(__dirname, "public")));
-
 // Mount routers
-app.use("/api/v1/bootcamps", bootcamps);
+app.use("/api/v1", route);
 
-const PORT = 5000;
+const PORT = 5030;
 
 const server = app.listen(
 	PORT,
-	console.log(
-		`Server is running in development mode on port ${PORT}`.magenta.bold
-	)
+	console.log(`Server is running in development mode on port ${PORT}`)
 );
 
 //Handle unhandled rejections
